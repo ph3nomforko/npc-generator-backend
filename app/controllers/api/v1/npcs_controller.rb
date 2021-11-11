@@ -1,2 +1,2 @@
-class NpcsController < ApplicationController
+class Api::V1::NpcsController < ApplicationController
 end

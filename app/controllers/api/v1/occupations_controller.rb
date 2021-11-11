@@ -1,2 +1,2 @@
-class OccupationsController < ApplicationController
+class Api::V1::OccupationsController < ApplicationController
 end
