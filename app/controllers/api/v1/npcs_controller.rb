@@ -21,9 +21,25 @@ class Api::V1::NpcsController < ApplicationController
     end
   end
 
+  def update
+    @npc.update(
+      name: params["occupation"]["name"],
+      species: params["occupation"]["species"],
+      alignment: params["occupation"]["alignment"],
+      behavior: params["occupation"]["behavior"],
+      strong_ability: params["occupation"]["strong_ability"],
+      weak_ability: params["occupation"]["weak_ability"],
+      plot_key: params["occupation"]["plot_key"]
+    )
+    @npc.save
+    render json: @occupation
+  end
+
   def destroy
     @npc = Npc.find(params["id"])
+    @occupation = Occupation.find(@npc.occupation_id)
     @npc.destroy
+    render json: @occupation
   end
 
   private
