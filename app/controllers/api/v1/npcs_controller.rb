@@ -1,7 +1,6 @@
 class Api::V1::NpcsController < ApplicationController
 
   before_action :set_occupation
-  before_action :set_npc, only: [:show, :destroy]
 
   def index
     @npcs = @occupation.npcs
@@ -9,19 +8,21 @@ class Api::V1::NpcsController < ApplicationController
   end
 
   def show
+    @npc = Npc.find(params[:id])
     render json: @npc
   end
 
   def create
     @npc = @occupation.npcs.new(npc_params)
     if @npc.save
-      render json: @npc
+      render json: @occupation
     else
       render json: {error: 'Error creating occupation.'}
     end
   end
 
   def destroy
+    @npc = Npc.find(params["id"])
     @npc.destroy
   end
 
@@ -31,12 +32,8 @@ class Api::V1::NpcsController < ApplicationController
     @occupation = Occupation.find(params[:occupation_id])
   end
 
-  def set_npc
-    @npc = Npc.find(params[:id])
-  end
-
   def npc_params
-    params.require(:occupation).permit(
+    params.require(:npc).permit(
       :name,
       :species,
       :alignment,
