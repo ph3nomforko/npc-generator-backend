@@ -22,16 +22,17 @@ class Api::V1::NpcsController < ApplicationController
   end
 
   def update
+    binding.pry
     @npc = Npc.find(params[:id])
     @npc.update(
-      name: params["occupation"]["name"],
-      species: params["occupation"]["species"],
-      alignment: params["occupation"]["alignment"],
-      appearance: params["occupation"]["alignment"],
-      behavior: params["occupation"]["behavior"],
-      strong_ability: params["occupation"]["strong_ability"],
-      weak_ability: params["occupation"]["weak_ability"],
-      plot_key: params["occupation"]["plot_key"],
+      name: params["name"],
+      species: params["species"],
+      alignment: params["alignment"],
+      appearance: params["appearance"],
+      behavior: params["behavior"],
+      strong_ability: params["strong_ability"],
+      weak_ability: params["weak_ability"],
+      plot_key: params["plot_key"],
     )
     @npc.save
     render json: @occupation
