@@ -4,6 +4,7 @@ occupation_two = Occupation.create(name:"Village Elder")
 npc_one = Npc.create(
   name:"Immaril",
   species:"Human",
+  npc_class:"Cleric",
   alignment:"Lawful Neutral",
   appearance:"Lanky",
   strong_ability:"Dexterity",
@@ -15,6 +16,7 @@ npc_one = Npc.create(
 npc_two = Npc.create(
   name:"Eriator",
   species:"Half-elf",
+  npc_class:"Fighter",
   alignment:"Lawful Good",
   appearance:"Very tanned",
   strong_ability:"Constitution",
@@ -26,6 +28,7 @@ npc_two = Npc.create(
 npc_three = Npc.create(
   name:"Jeoth",
   species:"Human",
+  npc_class:"Monk",
   alignment:"Chaotic Good",
   appearance:"Ancient",
   strong_ability:"Wisdom",
