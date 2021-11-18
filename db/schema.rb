@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_215435) do
+ActiveRecord::Schema.define(version: 2021_11_18_153837) do
 
   create_table "npcs", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_11_11_215435) do
     t.integer "occupation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "npc_class"
     t.index ["occupation_id"], name: "index_npcs_on_occupation_id"
   end
 
