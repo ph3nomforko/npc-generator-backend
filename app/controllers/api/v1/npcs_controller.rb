@@ -45,7 +45,7 @@ class Api::V1::NpcsController < ApplicationController
     params.require(:npc).permit(
       :name,
       :species,
-      :class,
+      :npc_class,
       :alignment,
       :appearance,
       :behavior,
